@@ -22,12 +22,24 @@
 
         <a-ring position="7 1 -20" radius-inner="1" radius-outer="3" src="aleix.png" animation="property: position; to: 7 3 -20; dur: 4000; dir: alternate; loop: true; easing: easeOutQuad"></a-ring>
 
-        <a-box position="10 3 -4" rotation="0 0 50"  src="sergio.jpg" depth="4" height="4" width="4" animation="property: rotation; to: 0 360 0; dur: 4000; loop: true"></a-box>
+        <a-box id="sergi" position="10 3 -4" rotation="0 0 50" src="sergio.jpg" depth="4" height="4" width="4" animation="property: rotation; to: 0 360 0; dur: 4000; loop: true"></a-box>
 
         <a-tetrahedron position="-10 1 -5" radius="2" src="godzilla.jpg"></a-tetrahedron>
 
         <a-octahedron position="-10 5 -5" radius="2" src="peru.jpg"></a-octahedron>
 
     </a-scene>
+    <script>
+      let unobjecte = document.querySelector("#sergi");
+
+      unobjecte.addEventListener("click", () => {
+        unobjecte.setAttribute("animation", {
+          property: "rotation",
+          to: "0 360 0",
+          dur: 100, 
+          loop: true 
+        });
+      });
+    </script>
   </body>
 </html>
