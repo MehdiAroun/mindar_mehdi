@@ -31,14 +31,23 @@
     </a-scene>
     <script>
       let unobjecte = document.querySelector("#sergi");
+      let fast=false;
 
       unobjecte.addEventListener("click", () => {
+        if (fast){
+          unobjecte.removeAttribute("animation");
+          fast = false;          
+        }
+        else{
         unobjecte.setAttribute("animation", {
           property: "rotation",
           to: "0 360 0",
           dur: 100, 
           loop: true 
         });
+        fast=true;
+      }
+      
       });
     </script>
   </body>
