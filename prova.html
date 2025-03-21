@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercici ?</title>
+    <style>
+        #Text {
+            transition: font-size 0.3s ease;
+        }
+        #Hover {
+            font-size: 24px;
+            transition: color 1s ease;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="Text">Monster, you get in my way, I'mma feed you to the monster</h1>
+    <h1 id="Hover">Godzilla, fire spitter, Monster</h1>
+
+    <script>
+        function getRandomColor() {
+            const colors = ['#FF5733', '#33FF57', '#3357FF', '#F5A623', '#9B59B6', '#1ABC9C', '#F39C12', '#2C3E50'];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        const TextChangeColor = document.getElementById("Text");
+        TextChangeColor.addEventListener("mouseover", function() {
+            TextChangeColor.style.fontSize = "40px"; 
+        });
+
+        TextChangeColor.addEventListener("mouseout", function() {
+            TextChangeColor.style.fontSize = "30px";
+        });
+
+        const HoverText = document.getElementById("Hover");
+        setInterval(function() {
+            HoverText.style.color = getRandomColor();
+        }, 2000);
+    </script>
+</body>
+</html>
