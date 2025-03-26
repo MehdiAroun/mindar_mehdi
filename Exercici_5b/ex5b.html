@@ -12,7 +12,7 @@
         
         <a-plane position="0 -1.7 0" rotation="-90 0 0" width="100" height="100" src="hector.png"></a-plane>    
      
-        <a-sphere position="5 2 -10" radius="2" src="mehdi.png" animation="property: rotation; to: 0 360 0; dur: 5000; loop: true; easing: linear"></a-sphere>
+        <a-sphere id="mehdi" position="5 2 -10" radius="2" src="mehdi.png" animation="property: rotation; to: 0 360 0; dur: 5000; loop: true; easing: linear"></a-sphere>
 
         <a-cone position="-6 2 -12" radius-bottom="2" radius-top="0" height="4" src="vitor.png" animation="property: rotation; to: 360 0 0; dur: 4000; loop: true; easing: linear; property: scale; to: 1 1.5 1; dur: 3000; dir: alternate; loop: true"></a-cone>
         
@@ -24,7 +24,7 @@
 
         <a-box id="sergi" position="10 3 -4" rotation="0 0 50" src="sergio.jpg" depth="4" height="4" width="4" animation="property: rotation; to: 0 360 0; dur: 4000; loop: true"></a-box>
 
-        <a-tetrahedron position="-10 1 -5" radius="2" src="godzilla.jpg"></a-tetrahedron>
+        <a-tetrahedron id="godzilla" position="-10 1 -5" radius="2" src="godzilla.jpg"></a-tetrahedron>
 
         <a-octahedron position="-10 5 -5" radius="2" src="peru.jpg"></a-octahedron>
 
@@ -49,6 +49,25 @@
       }
       
       });
+
+      let godzilla = document.querySelector("#godzilla");
+      godzilla.addEventListener("mouseenter", () => {
+        godzilla.setAttribute("scale", "3 3 3");
+      });
+      godzilla.addEventListener("mouseleave", () => {
+        godzilla.setAttribute("scale", "1 1 1");
+      });
+
+      function getRandomColor() {
+            const colors = ['#FF5733', '#33FF57', '#3357FF', '#F5A623', '#9B59B6', '#1ABC9C', '#F39C12', '#2C3E50'];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+        
+        let mehdi = document.querySelector("#mehdi");
+      setInterval(() => {
+        let randomColor = getRandomColor(); 
+        mehdi.setAttribute("material", "color", randomColor);
+      }, 2000);
     </script>
   </body>
 </html>
