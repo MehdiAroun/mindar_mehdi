@@ -19,6 +19,8 @@
       <img id="portal" src="netherportal.webp" >
       <img id="overworld" src="overworld.png" >
       <a-asset-item id="steve" src="steve/scene.gltf"></a-asset-item>
+      <img id="ex6" src="imatge6.png" >
+      <img id="ex5" src="imatge5b.png" >
     </a-assets>
    
     <a-entity camera look-controls wasd-controls="false">
@@ -41,6 +43,8 @@
       <a-sky src="#overworld"></a-sky>
       <a-entity gltf-model="#steve" position="-10 -3.5 50" rotation="0 90 0" scale="0.3 0.3 0.3" animation="property: rotation; to: 0 360 0; dur: 100; loop: true" ></a-entity>
       <a-plane position="-4 0 -10" src="#portal" scale="3 4 0" rotation="0 0 0"  transparent="true" mylink="href: nether.html;"></a-plane>
+      <a-plane position="5 0 -10" src="#ex6" animation="property: scale; to: 1 1 1; dur: 2500; dir: alternate; loop: true;" scale="2 2 0" rotation="0 -30 0"  transparent="true" mylink="href: https://mehdiaroun.github.io/mindar_mehdi/Exercici_6/ex6.html;"></a-plane>
+      <a-plane position="10 0 -10" src="#ex5" animation="property: scale; to: 1 1 0; dur: 2500; dir: alternate; loop: true;" scale="2 2 0" rotation="0 -20 0"  transparent="true" mylink="href: https://mehdiaroun.github.io/mindar_mehdi/Exercici_5b/ex5b.html;"></a-plane>
     </a-scene>
   </body>
 </html>
